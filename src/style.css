@@ -2,6 +2,7 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+
 .row {
   display: flex;
   margin: 5px auto;
@@ -20,7 +21,7 @@ body {
 
 #city {
   font-size: 50px;
-  margin: 0px;
+  margin-top: 10px;
   padding: 0px;
 }
 
@@ -89,30 +90,4 @@ form {
   border-radius: 7px;
   text-align: center;
   font-size: 18px;
-}
-
-#forecast-2 {
-  max-width: 500px;
-  margin: 0px auto;
-  padding: 0px;
-  margin-top: 5px;
-}
-
-.forecast-2-wrapper {
-  padding: 20px;
-  border: 1px solid #0168d9;
-  border-radius: 7px;
-}
-
-#forecast-3 {
-  max-width: 500px;
-  margin: 0px auto;
-  padding: 0px;
-  margin-top: 5px;
-}
-
-.forecast-3-wrapper {
-  padding: 20px;
-  border: 1px solid #0168d9;
-  border-radius: 7px;
 }
