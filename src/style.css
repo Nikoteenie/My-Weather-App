@@ -1,25 +1,22 @@
 body {
-font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-.row{
+.row {
   display: flex;
   margin: 5px auto;
-
-
 }
-  
+
 .col-9 {
-padding: 3px;
+  padding: 3px;
 }
 .col {
   padding: 2px;
 }
 
 .buttons {
- text-align: right;
+  text-align: right;
 }
-
 
 ul {
   list-style: none;
@@ -27,20 +24,16 @@ ul {
   padding: 0px;
 }
 
-
 #city {
   font-size: 50px;
   margin: 0px;
   padding: 0px;
-  
 }
 
 #date {
   font-size: 20px;
   margin: 0px;
   padding: 0px;
-  
-  
 }
 
 #temperature {
@@ -52,23 +45,18 @@ ul {
 }
 
 #units {
-  font-size:20px;
+  font-size: 20px;
   position: relative;
   bottom: 80px;
 }
-
 
 ul {
   margin: 0px;
 }
 
 #description {
-font-size: 20px;
+  font-size: 20px;
 }
-
-
-
-
 
 form {
   max-width: 500px;
@@ -79,25 +67,19 @@ form {
 .weather-app-wrapper {
   max-width: 500px;
   max-height: 500px;
-   margin: 5px auto;
-  
+  margin: 5px auto;
 }
 
 .weather-app {
-    padding: 20px;
+  padding: 20px;
   border: 1px solid #0168d9;
   border-radius: 7px;
 }
 
-
-
-
-
 #forecast-1 {
   max-width: 470px;
- margin: 0px auto;
- padding: 0px;
-  
+  margin: 0px auto;
+  padding: 0px;
 }
 
 .forecast-1-wrapper {
@@ -105,16 +87,14 @@ form {
   border: 1px solid #0168d9;
   border-radius: 7px;
   text-align: center;
-  font-size:20px
+  font-size: 20px;
 }
-
 
 #forecast-2 {
   max-width: 500px;
- margin: 0px auto;
- padding: 0px;
- margin-top: 5px;
-  
+  margin: 0px auto;
+  padding: 0px;
+  margin-top: 5px;
 }
 
 .forecast-2-wrapper {
@@ -125,11 +105,9 @@ form {
 
 #forecast-3 {
   max-width: 500px;
-margin: 0px auto;;
- padding: 0px;
- margin-top: 5px;
- 
-  
+  margin: 0px auto;
+  padding: 0px;
+  margin-top: 5px;
 }
 
 .forecast-3-wrapper {
