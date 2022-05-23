@@ -39,7 +39,7 @@
                 </div>
                  <div class="col">
 
-<label class="btn btn-success" for="btn-check"><i class="fa-solid fa-location-dot"></i></label>
+<button class="btn btn-success" id="current-button"><i class="fa-solid fa-location-dot"></i></button>
                 </div>
                 
                  </form>
@@ -59,19 +59,20 @@
   
 
    
-  <h1 id="city"><strong>Los Angeles</strong></h1>
+  <h1 id="city"></h1>
   <div id="update">Last updated:</div>
-  <div id="date">Monday 10:50</div>
-  <div id="temperature"><strong>90 </strong></div>
-  <span id="units">°F</span> 
+  <div id="date"></div>
+  <div id="temperature"><strong></strong></div>
+  <span id="units"> °F</span> 
 
-
+<img id="icon" src="" alt="">
         
 
 <ul>
-  <li> <span id="description"><i>Sunny</i></span></li>              
-  <li>Humidity: <span id="humidity">30</span>%</li>
-  <li>Wind: <span id="wind">5 mph</span> </li>
+ <li class="title-descript"> <span id="description"></span></li>              
+  <li><span class="title-descript">Humidity:</span> <span id="humidity"></span>%</li>
+  <li><span class="title-descript">Wind:</span> <span id="wind"></span>
+    <span id="wind-conversion">mph</span></li>
   </ul>
     
     
@@ -83,9 +84,9 @@
     <div class="container" id="forecast-1">
 <div class="forecast-1-wrapper">
  <div class="row">
-  <div class="col" id="weekday-1">Tuesday</div>
-   <div class="col" id="image-1"><i class="fa-solid fa-sun"></i></div>
-    <div class="col" id="weekday-tem">90 / 110 °C</div>
+  <div class="col" id="weekday">Tuesday</div>
+   <div class="col" id="image"><i class="fa-solid fa-sun"></i></div>
+    <div class="col" id="weekday-temp">90 / 110 °C</div>
 
   </div>
 
