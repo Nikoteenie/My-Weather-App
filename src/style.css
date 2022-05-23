@@ -101,13 +101,14 @@ form {
   border-radius: 7px;
 }
 
-#forecast-1 {
-  max-width: 470px;
+#forecast {
+  max-width: 500px;
   margin: 0px auto;
   padding: 0px;
+  
 }
 
-.forecast-1-wrapper {
+#contained-forecast {
   padding: 10px;
   border: 1px solid #0168d9;
   border-radius: 7px;

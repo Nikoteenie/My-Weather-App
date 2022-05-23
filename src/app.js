@@ -25,6 +25,64 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+// Weekly Forecast
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="container" id="forecast-wrapper">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        ` 
+
+
+ <div class="row" id="contained-forecast">
+  <div class="col" id="weekday">${formatDay(forecastDay.dt)}</div>
+   <div class="col" id="image"><img src="http://openweathermap.org/img/wn/${
+     forecastDay.weather[0].icon
+   }@2x.png" width="50"/></div>
+    <div class="col"><span id="weekday-temp-max">
+    ${Math.round(forecastDay.temp.max)}°</span>
+    /
+    <span id="weekday-temp-min">
+      ${Math.round(forecastDay.temp.min)}°
+    </span></div>
+
+  </div>`;
+
+}});
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "b6520355a84f46a27e6fe4523cdc2546";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+///
 
 /// All reference for search results 
 function displayTemperature(response) {
@@ -81,6 +139,16 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+//Conversion Button
+
+function displayMetric(event) {
+  event.preventDefault();
+  let metricTemperature = document.querySelector("#temperature");
+metricTemperature.innerHTML = "Poop";
+}
+
+let celsiusTemperature = null;
+
 /// Search Submission 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
@@ -88,5 +156,10 @@ form.addEventListener("submit", handleSubmit);
 /// Current Location Button
 let currentLocationButton = document.querySelector("#current-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+
+///Conversion Button
+let conversionButton= document.querySelector("#conversion");
+conversionButton.addEventListener("click", displayMetric);
 
 search("Miami");
