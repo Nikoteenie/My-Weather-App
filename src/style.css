@@ -1,7 +1,11 @@
+
+
 body {
   font-family: "Inter", sans-serif;
-  background-color: yellow;
+ 
 }
+
+
 
 .row {
   display: flex;
@@ -46,11 +50,20 @@ body {
   left: 20px;
 }
 
-#units {
-  font-size: 35px;
+.units {
+  font-size: 25px;
   position: relative;
   bottom: 66px;
   right: -12px;
+}
+
+.units .active {
+  color: blue;
+  cursor: default;
+}
+
+.units .active:hover {
+  text-decoration: none;
 }
 
 #icon {

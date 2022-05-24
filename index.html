@@ -14,9 +14,12 @@
     <script src="https://kit.fontawesome.com/73ffcbdb91.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="src/style.css" />
-    <title>Document</title>
+    <title>Weather</title>
   </head>
+  
   <body>
+  
+    
     <div class="container">
    
       <form id="search-form" class="mb-3 input-sm">
@@ -52,7 +55,6 @@
       <div id="weather-app">
 
 <div class="buttons">
-        <button class="btn btn-outline-dark btn-sm"id="conversion">Metric</button>
         <button onClick="window.location.reload();" class="btn btn-outline-dark btn-sm" id="refresh"><i class="fa-solid fa-arrows-rotate"></i></button>
   </div>
 
@@ -63,7 +65,7 @@
   <div id="update">Last updated:</div>
   <div id="date"></div>
   <div id="temperature"><strong></strong></div>
-  <span id="units"> <a href="#" id="fahrenheit-link">°F </a></span> 
+  <span class="units"> <a href="#" class="active" id="fahrenheit-link">°F </a>|<a href="#" id="celsius-link"> °C </a></span> 
 
 <img id="icon" src="" alt="">
         
@@ -79,7 +81,7 @@
     </div>
    </div>
   </div>
-    </div>
+    
     <div class="weather-forecast" id="forecast">
 
     
@@ -87,9 +89,9 @@
 
 
 
-
-    
-    
+</div>
+   </div> 
+   
 </body>
 <script src="src/app.js"></script>
 </html>

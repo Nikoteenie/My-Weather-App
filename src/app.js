@@ -133,36 +133,33 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-//Conversion Button
-function displayMetric(event) {
+function displayCelsiusTemperature(event) {
   event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 
   let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
-  let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = Math.round(celsiusTemperature);
-
-  let maxMetricTemperature = document.querySelector("#weekday-temp-max");
-  let minMetricTemperature = document.querySelector("#weekday-temp-min");
-  let unitShown = document.querySelector("#units");
-
-  temperature.innerHTML = Math.round(celsiusTemperature);
-
-  maxMetricTemperature.innerHTML = Math.round(celsiusTemperature);
-  minMetricTemperature.innerHTML = Math.round(celsiusTemperature);
-  unitShown.innerHTML = "°C";
-
-  for (let i = 0; i < 6; i++) {
-    fmax = Math.round(forecast[i].temp.max);
-    fmin = Math.round(forecast[i].temp.min);
-    maxMetricTemperature = Math.round((fmax - 32) * 5) / 9;
-    minMetricTemperature = Math.round((fmax - 32) * 5) / 9;
-    let forecastHigh = document.querySelectorAll("#weekday-temp-max")[i];
-    forecastHigh.innerHTML = maxMetricTemperature;
-    let forecastLow = document.querySelectorAll("#weekday-temp-min")[i];
-    forecastLow.innerHTML = minMetricTemperature;
-  }
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+//Conversion Button
 let fahrenheitTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 /// Search Submission
 let form = document.querySelector("#search-form");
@@ -171,9 +168,5 @@ form.addEventListener("submit", handleSubmit);
 /// Current Location Button
 let currentLocationButton = document.querySelector("#current-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-
-///Conversion Button
-let conversionButton = document.querySelector("#conversion");
-conversionButton.addEventListener("click", displayMetric);
 
 search("Miami");
