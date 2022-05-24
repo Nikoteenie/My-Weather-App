@@ -1,5 +1,6 @@
 body {
   font-family: "Inter", sans-serif;
+  background-color: yellow;
 }
 
 .row {
@@ -76,6 +77,19 @@ li:first-letter {
   font-style: italic;
 }
 
+#weekday-temp-max {
+  color: red;
+ font-weight: bold;
+}
+
+#weekday-temp-min {
+   color: #0168d9;
+  font-weight: lighter;
+}
+
+
+
+
 form {
   max-width: 500px;
   margin: 30px auto;
@@ -106,4 +120,5 @@ form {
   border-radius: 7px;
   text-align: center;
   font-size: 18px;
+  background-color: white;
 }
