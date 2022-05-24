@@ -79,16 +79,13 @@ li:first-letter {
 
 #weekday-temp-max {
   color: red;
- font-weight: bold;
+  font-weight: bold;
 }
 
 #weekday-temp-min {
-   color: #0168d9;
+  color: #0168d9;
   font-weight: lighter;
 }
-
-
-
 
 form {
   max-width: 500px;
@@ -99,13 +96,13 @@ form {
   max-width: 500px;
   max-height: 500px;
   margin: 5px auto;
-  
 }
 
 #weather-app {
   padding: 20px;
   border: 1px solid #0168d9;
   border-radius: 7px;
+  background-color: white;
 }
 
 #forecast {

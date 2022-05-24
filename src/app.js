@@ -136,47 +136,33 @@ function getCurrentLocation(event) {
 //Conversion Button
 function displayMetric(event) {
   event.preventDefault();
-  let metricTemperature = document.querySelector("#temperature");
-  let maxMetricTemperature = document.querySelector(
-    "#weekday-temp-max,#weekday-temp-min"
-  );
-  let unitShown = document.querySelector("#units");
 
   let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
-  metricTemperature.innerHTML = Math.round(celsiusTemperature);
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+
+  let maxMetricTemperature = document.querySelector("#weekday-temp-max");
+  let minMetricTemperature = document.querySelector("#weekday-temp-min");
+  let unitShown = document.querySelector("#units");
+
+  temperature.innerHTML = Math.round(celsiusTemperature);
+
   maxMetricTemperature.innerHTML = Math.round(celsiusTemperature);
+  minMetricTemperature.innerHTML = Math.round(celsiusTemperature);
   unitShown.innerHTML = "°C";
-}
 
-let fahrenheitTemperature = null;
-
-//Change Background Color by Time (Doesnt work)
-function changeBackground(timestamp) {
-  let date = new Date(timestamp);
-  let hours = date.getHours();
-
-  let element = document.getElementById("weather-app");
-  if (hours > 15) {
-    element.style.backgroundColor = "eeff00";
-  } else {
-    element.style.backgroundColor = "#007bff";
+  for (let i = 0; i < 6; i++) {
+    fmax = Math.round(forecast[i].temp.max);
+    fmin = Math.round(forecast[i].temp.min);
+    maxMetricTemperature = Math.round((fmax - 32) * 5) / 9;
+    minMetricTemperature = Math.round((fmax - 32) * 5) / 9;
+    let forecastHigh = document.querySelectorAll("#weekday-temp-max")[i];
+    forecastHigh.innerHTML = maxMetricTemperature;
+    let forecastLow = document.querySelectorAll("#weekday-temp-min")[i];
+    forecastLow.innerHTML = minMetricTemperature;
   }
 }
-
-// Didnt Work
-function temperatureColor (event) {
-let degree = Math.round(fahrenheitTemperature);
-let element = document.getElementById("#temperature");
-
-
-if (degree > 70) {
-  event.element.style.color = "#ff0000"
-}
-
-else {
-  event.element.style.color = "#0168d9"
-}
-}
+let fahrenheitTemperature = null;
 
 /// Search Submission
 let form = document.querySelector("#search-form");
@@ -191,13 +177,3 @@ let conversionButton = document.querySelector("#conversion");
 conversionButton.addEventListener("click", displayMetric);
 
 search("Miami");
-
-/// doesnt work
-let backgroundColorChange = document.querySelector("#weather-app");
-backgroundColorChange.addEventListener("fullscreenchange", changeBackground);
-
-let tempColorChange = document.querySelector("#temperature");
-tempColorChange.addEventListener("submit", temperatureColor);
-
-changeBackground("#ff0000");
-
