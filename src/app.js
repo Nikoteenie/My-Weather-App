@@ -1,5 +1,4 @@
-
-/// Current Time Display 
+/// Current Time Display
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -43,6 +42,7 @@ function formatDay(timestamp) {
   return days[day];
 }
 
+/// Weekly Forecast
 function displayForecast(response) {
   let forecast = response.data.daily;
 
@@ -54,9 +54,7 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         ` 
-
-
- <div class="row" id="contained-forecast">
+<div class="row" id="contained-forecast">
   <div class="col" id="weekday">${formatDay(forecastDay.dt)}</div>
    <div class="col" id="image"><img src="http://openweathermap.org/img/wn/${
      forecastDay.weather[0].icon
@@ -66,11 +64,9 @@ function displayForecast(response) {
     /
     <span id="weekday-temp-min">
       ${Math.round(forecastDay.temp.min)}°
-    </span></div>
-
-  </div>`;
-
-}});
+    </span></div></div>`;
+    }
+});
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -84,7 +80,7 @@ function getForecast(coordinates) {
 }
 ///
 
-/// All reference for search results 
+/// All reference for search results
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -94,10 +90,10 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
-  celsiusTemperature = response.data.main.temp;
+  fahrenheitTemperature = response.data.main.temp;
   mhWind = response.data.wind.speed;
 
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -112,7 +108,7 @@ function displayTemperature(response) {
   getForecast(response.data.coord);
 }
 
-/// Search Submission 
+/// Search Submission
 function search(city) {
   let apiKey = "b6520355a84f46a27e6fe4523cdc2546";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
@@ -125,8 +121,6 @@ function searchLocation(position) {
 
   axios.get(apiUrl).then(displayTemperature);
 }
-
-
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -144,12 +138,31 @@ function getCurrentLocation(event) {
 function displayMetric(event) {
   event.preventDefault();
   let metricTemperature = document.querySelector("#temperature");
-metricTemperature.innerHTML = "Poop";
+  let maxMetricTemperature = document.querySelector("#weekday-temp-max");
+
+  let celsiusTemperature = (fahrenheitTemperature -32) * 5/9;
+  metricTemperature.innerHTML = Math.round(celsiusTemperature);
+   maxMetricTemperature.innerHTML = Math.round(celsiusTemperature);
+  
 }
 
-let celsiusTemperature = null;
+let fahrenheitTemperature = null;
 
-/// Search Submission 
+
+//Change Background Color by Time
+function changeBackground(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  
+  let element = document.getElementById("weather-app");
+  if (hours > 15) {
+    element.style.backgroundColor = "eeff00";
+  } else {
+    element.style.backgroundColor = "#007bff";
+  }
+}
+
+/// Search Submission
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -157,9 +170,9 @@ form.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#current-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-
 ///Conversion Button
-let conversionButton= document.querySelector("#conversion");
+let conversionButton = document.querySelector("#conversion");
 conversionButton.addEventListener("click", displayMetric);
 
+changeBackground("hours");
 search("Miami");

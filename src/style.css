@@ -2,7 +2,6 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-
 .row {
   display: flex;
   margin: 5px auto;
@@ -28,7 +27,6 @@ body {
 
 #update {
   font-size: 12px;
-  
 }
 
 #date {
@@ -58,15 +56,12 @@ body {
   position: relative;
   bottom: -16px;
   right: -93px;
-  
-
 }
 
 ul {
   list-style: none;
   margin: 0px;
   padding: 0px;
-
 }
 li:first-letter {
   text-transform: capitalize;
@@ -81,8 +76,6 @@ li:first-letter {
   font-style: italic;
 }
 
-
-
 form {
   max-width: 500px;
   margin: 30px auto;
@@ -92,10 +85,10 @@ form {
   max-width: 500px;
   max-height: 500px;
   margin: 5px auto;
- 
+  
 }
 
-.weather-app {
+#weather-app {
   padding: 20px;
   border: 1px solid #0168d9;
   border-radius: 7px;
@@ -105,7 +98,6 @@ form {
   max-width: 500px;
   margin: 0px auto;
   padding: 0px;
-  
 }
 
 #contained-forecast {
