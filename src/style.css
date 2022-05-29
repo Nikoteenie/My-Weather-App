@@ -102,6 +102,10 @@ li:first-letter {
 }
 
 
+#footer {
+  color: white;
+  padding: 20px;
+}
 
 #search-form {
   max-width: 450px;
@@ -110,12 +114,13 @@ li:first-letter {
 }
 
 .weather-app-wrapper {
-  max-width: 460px;
-  max-height: 500px;
   margin: 5px auto;
+  max-width: 505px;
 }
 
 #weather-app {
+  max-width: 500px;
+  max-height: 500px;
   padding: 10px;
   margin: 2px auto;
   border: 2px solid black;
@@ -140,11 +145,4 @@ li:first-letter {
   background-color: white;
 }
 
-#footer {
-  color: white;
-  padding: 20px;
-  
-  
-  
 
-}
