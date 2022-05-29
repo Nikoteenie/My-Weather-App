@@ -5,6 +5,7 @@ function formatDate(timestamp) {
   if (hours < 10) {
     hours = `0${hours}`;
   }
+  
   let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
@@ -55,7 +56,9 @@ function displayForecast(response) {
         forecastHTML +
         ` 
 <div class="row align-items-start"" id="contained-forecast">
-  <div class="col" id="weekday">${formatDay(forecastDay.dt)}</div>
+  <div class="col" id="weekday"><strong>${formatDay(
+    forecastDay.dt
+  )}</strong></div>
   
   <div class="col"><img src="images/${
     forecastDay.weather[0].icon
@@ -63,9 +66,9 @@ function displayForecast(response) {
    
    
   <div class="col"><span id="weekday-temp-max">
-    ${Math.round(forecastDay.temp.max)}</span>°
-    /
-    <span id="weekday-temp-min">
+    ${Math.round(forecastDay.temp.max)}°</span>
+    
+     <span id="weekday-temp-min">
       ${Math.round(forecastDay.temp.min)}°</span></div></div>`;
     }
   });
@@ -97,6 +100,10 @@ function displayTemperature(response) {
 
 
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+ 
+
+
+
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;

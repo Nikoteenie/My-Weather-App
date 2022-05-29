@@ -2,7 +2,7 @@
 
 body {
   font-family: "Inter", sans-serif;
- 
+background-color: black;
 }
 
 
@@ -58,7 +58,7 @@ body {
 }
 
 .units .active {
-  color: blue;
+  color: black;
   cursor: default;
 }
 
@@ -89,9 +89,6 @@ li:first-letter {
   font-size: 20px;
   font-style: italic;
 }
-
-
-
 
 #weekday-temp-max {
   color:black;
@@ -141,4 +138,13 @@ li:first-letter {
   text-align: center;
   font-size: 18px;
   background-color: white;
+}
+
+#footer {
+  color: white;
+  padding: 20px;
+  
+  
+  
+
 }
