@@ -6,13 +6,12 @@ body {
 }
 
 
-
-.row {
+#search-bar {
   display: flex;
   margin: 5px auto;
 }
 
-.col-9 {
+.col-8 {
   padding: 3px;
 }
 .col {
@@ -55,6 +54,7 @@ body {
   position: relative;
   bottom: 66px;
   right: -12px;
+  
 }
 
 .units .active {
@@ -90,15 +90,21 @@ li:first-letter {
   font-style: italic;
 }
 
+
+
+
 #weekday-temp-max {
-  color: red;
+  color:black;
   font-weight: bold;
 }
 
 #weekday-temp-min {
-  color: #0168d9;
+  color: black;
+  opacity: 50%;
   font-weight: lighter;
 }
+
+
 
 form {
   max-width: 500px;
@@ -113,7 +119,7 @@ form {
 
 #weather-app {
   padding: 20px;
-  border: 1px solid #0168d9;
+  border: 2px solid black;
   border-radius: 7px;
   background-color: white;
 }
@@ -122,11 +128,12 @@ form {
   max-width: 500px;
   margin: 0px auto;
   padding: 0px;
+  text-align: center;
 }
 
 #contained-forecast {
   padding: 10px;
-  border: 1px solid #0168d9;
+  border: 1.5px solid black;
   border-radius: 7px;
   text-align: center;
   font-size: 18px;
