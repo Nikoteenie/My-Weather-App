@@ -59,7 +59,7 @@ function displayForecast(response) {
   
   <div class="col"><img src="images/${
     forecastDay.weather[0].icon
-  }.png" alt="" id="image" width="30"></div>
+  }.gif" alt="" id="image" width="30"></div>
    
    
   <div class="col"><span id="weekday-temp-max">
@@ -102,7 +102,7 @@ function displayTemperature(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  iconElement.setAttribute("src", `images/${response.data.weather[0].icon}.png`);
+  iconElement.setAttribute("src", `images/${response.data.weather[0].icon}.gif`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   getForecast(response.data.coord);

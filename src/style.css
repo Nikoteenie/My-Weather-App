@@ -68,8 +68,8 @@ body {
 
 #icon {
   position: relative;
-  bottom: -16px;
-  right: -93px;
+  bottom: -35px;
+  
 }
 
 ul {
@@ -106,19 +106,21 @@ li:first-letter {
 
 
 
-form {
-  max-width: 500px;
-  margin: 30px auto;
+#search-form {
+  max-width: 450px;
+  margin: 5px auto;
+  
 }
 
 .weather-app-wrapper {
-  max-width: 500px;
+  max-width: 460px;
   max-height: 500px;
   margin: 5px auto;
 }
 
 #weather-app {
-  padding: 20px;
+  padding: 10px;
+  margin: 2px auto;
   border: 2px solid black;
   border-radius: 7px;
   background-color: white;
@@ -126,13 +128,14 @@ form {
 
 #forecast {
   max-width: 500px;
-  margin: 0px auto;
+  margin: 2px auto;
   padding: 0px;
   text-align: center;
 }
 
 #contained-forecast {
-  padding: 10px;
+ padding: 10px;
+  margin: 4px;
   border: 1.5px solid black;
   border-radius: 7px;
   text-align: center;
