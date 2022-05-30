@@ -60,6 +60,7 @@ body {
 
 .units .active:hover {
   text-decoration: none;
+  color: #007bff;
 }
 
 #icon {
@@ -96,11 +97,11 @@ li:first-letter {
   font-weight: lighter;
 }
 
-a {
+.footer {
   color: black;
 }
 
-a:hover {
+.footer:hover {
   color: white;
 }
 #footer {
@@ -109,35 +110,32 @@ a:hover {
 }
 
 #search-form {
-  max-width: 450px;
+  max-width: 400px;
   margin: 5px auto;
 }
 
 .weather-app-wrapper {
   margin: 5px auto;
-  max-width: 500px;
+  max-width: 450px;
 }
 
 #weather-app {
-  max-width: 500px;
-  max-height: 500px;
-  padding: 10px;
-  margin: 2px auto;
+ 
+  padding: 12px;
+  margin: 4px auto;
   border: 2px solid black;
   border-radius: 7px;
   background-color: white;
 }
 
 #forecast {
-  max-width: 500px;
-  margin: 2px auto;
-  padding: 0px;
-  text-align: center;
+ text-align: center;
 }
 
 #contained-forecast {
-  padding: 10px;
-  margin: 4px;
+  padding: 5px;
+  margin-bottom: 4px;
+  
   border: 1.5px solid black;
   border-radius: 7px;
   text-align: center;
