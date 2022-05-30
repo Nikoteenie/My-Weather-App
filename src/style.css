@@ -38,7 +38,7 @@ body {
 }
 
 #temperature {
-  font-size: 110px;
+  font-size: 100px;
   font-weight: 700;
   display: inline;
   position: relative;
@@ -107,7 +107,6 @@ a:hover {
   color: black;
   padding: 20px;
 }
-
 
 #search-form {
   max-width: 450px;
