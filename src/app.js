@@ -5,7 +5,7 @@ function formatDate(timestamp) {
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  
+
   let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
@@ -60,7 +60,7 @@ function displayForecast(response) {
     forecastDay.dt
   )}</strong></div>
   
-  <div class="col"><img src="images/${
+  <div class="col"><img src="images/icons/${
     forecastDay.weather[0].icon
   }.gif" alt="" id="image" width="30"></div>
    
@@ -93,28 +93,24 @@ function displayTemperature(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
-  let iconElement = document.querySelector("#icon")
-  
+  let iconElement = document.querySelector("#icon");
 
   fahrenheitTemperature = response.data.main.temp;
 
-
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
- 
-
-
 
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  iconElement.setAttribute("src", `images/${response.data.weather[0].icon}.gif`);
+  iconElement.setAttribute(
+    "src",
+    `images/teeniez/${response.data.weather[0].icon}.gif`
+  );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   getForecast(response.data.coord);
-
-
 }
 /// Search Submission
 function search(city) {
@@ -137,15 +133,13 @@ function searchLocation(position) {
   axios.get(apiUrl).then(displayTemperature);
 }
 
-
 /// Current Location Button
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-
-// Conversion Button 
+// Conversion Button
 function displayCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");

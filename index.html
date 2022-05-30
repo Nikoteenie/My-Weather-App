@@ -11,93 +11,96 @@
       crossorigin="anonymous"
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://kit.fontawesome.com/73ffcbdb91.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/73ffcbdb91.js"
+      crossorigin="anonymous"
+    ></script>
 
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather</title>
   </head>
-  
+
   <body>
-  
-    
     <div class="container">
-  
       <form id="search-form" class="justify-content-center mb-3 input-sm">
-            <div class="row" id="search-bar">
-              <div class="col-8">
-                <input
-                  type="search"
-                  placeholder="Type a city.."
-                  class="form-control "
-                  id="city-input"
-                  autocomplete="off"
-                />
-              </div>
-              
-              <div class="col">
-                <input
-                  type="submit"
-                  value="Search"
-                  class="btn  btn-primary w-100 input-sm"
-                />
-                </div>
-                 <div class="col">
+        <div class="row" id="search-bar">
+          <div class="col-8">
+            <input
+              type="search"
+              placeholder="Type a city.."
+              class="form-control"
+              id="city-input"
+              autocomplete="off"
+            />
+          </div>
 
-<button class="btn btn-success" id="current-button"><i class="fa-solid fa-location-dot"></i></button>
-                </div>
-              </div>
-              </form>
-                
+          <div class="col">
+            <input
+              type="submit"
+              value="Search"
+              class="btn btn-primary w-100 input-sm"
+            />
+          </div>
+          <div class="col">
+            <button class="btn btn-success" id="current-button">
+              <i class="fa-solid fa-location-dot"></i>
+            </button>
+          </div>
+        </div>
+      </form>
 
-
-               
-      
       <div class="weather-app-wrapper">
-      
         <div id="weather-app">
+          <div class="buttons">
+            <button
+              onClick="window.location.reload();"
+              class="btn btn-outline-dark btn-sm"
+              id="refresh"
+            >
+              <i class="fa-solid fa-arrows-rotate"></i>
+            </button>
+          </div>
 
-<div class="buttons">
-        <button onClick="window.location.reload();" class="btn btn-outline-dark btn-sm" id="refresh"><i class="fa-solid fa-arrows-rotate"></i></button>
-  </div>
+          <h1 id="city"></h1>
+          <div id="update">Last updated:</div>
+          <div id="date"></div>
+          <div id="temperature"><strong></strong></div>
+          <span class="units">
+            <a href="#" class="active" id="fahrenheit-link">°F </a>|<a
+              href="#"
+              id="celsius-link"
+            >
+              °C
+            </a></span
+          >
 
-  
+          <img id="icon" src="" alt="" width="200px" />
 
-   
-  <h1 id="city"></h1>
-  <div id="update">Last updated:</div>
-  <div id="date"></div>
-  <div id="temperature"><strong></strong></div>
-  <span class="units"> <a href="#" class="active" id="fahrenheit-link">°F </a>|<a href="#" id="celsius-link"> °C </a></span> 
+          <ul>
+            <li class="title-descript"><span id="description"></span></li>
+            <li>
+              <span class="title-descript">Humidity:</span>
+              <span id="humidity"></span>%
+            </li>
+            <li>
+              <span class="title-descript">Wind:</span> <span id="wind"></span>
+              <span id="wind-conversion">mph</span>
+            </li>
+          </ul>
+        </div>
 
-<img id="icon" src="" alt="" width="180px"/>
-        
+        <div class="weather-forecast" id="forecast"></div>
 
-<ul>
- <li class="title-descript"> <span id="description"></span></li>              
-  <li><span class="title-descript">Humidity:</span> <span id="humidity"></span>%</li>
-  <li><span class="title-descript">Wind:</span> <span id="wind"></span>
-    <span id="wind-conversion">mph</span></li>
-  </ul>
-    
+        <small id="footer">
+          <a
+            href="https://github.com/Nikoteenie/My-Weather-App.git"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Nicole Brodkin
+        </small>
+      </div>
     </div>
-  
-  
-    
-    <div class="weather-forecast" id="forecast">
-</div>
-
-
- <small id="footer">
-   
- <a href="https://github.com/Nikoteenie/My-Weather-App.git" target="_blank">Open-source code</a> by Nicole Brodkin
- </small>
-   
-
-</div>
-</div>
-
-
-   
-</body>
-<script src="src/app.js"></script>
+  </body>
+  <script src="src/app.js"></script>
 </html>
