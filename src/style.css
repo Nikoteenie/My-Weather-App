@@ -96,10 +96,18 @@ li:first-letter {
   font-weight: lighter;
 }
 
-#footer {
+a {
+  color: black;
+}
+
+a:hover {
   color: white;
+}
+#footer {
+  color: black;
   padding: 20px;
 }
+
 
 #search-form {
   max-width: 450px;
